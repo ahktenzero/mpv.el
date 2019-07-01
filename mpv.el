@@ -203,6 +203,16 @@ See `mpv-start' if you need to pass further arguments and
   (mpv-start (expand-file-name path)))
 
 ;;;###autoload
+(defun mpv-play-uri (uri)
+  "Start an mpv process playing a streaming resource at URI.
+
+You can use this with `org-add-link-type' or `org-file-apps'.
+See `mpv-start' if you need to pass further arguments and
+`mpv-default-options' for default options."
+  (interactive "MURI: ")
+  (mpv-start uri))
+
+;;;###autoload
 (defun mpv-kill ()
   "Kill the mpv process."
   (interactive)
