@@ -315,5 +315,15 @@ of \\[universal-argument] will add another `mpv-seek-step' seconds."
   (interactive "P")
   (mpv-seek-forward (- (mpv--raw-prefix-to-seconds arg))))
 
+(defun mpv-playlist-next ()
+    "Move to the next item in the playlist"
+  (interactive "")
+  (mpv--enqueue '("playlist-next") #'ignore))
+
+(defun mpv-playlist-previous ()
+    "Move to the previous item in the playlist"
+  (interactive "")
+  (mpv--enqueue '("playlist-next") #'ignore))
+
 (provide 'mpv)
 ;;; mpv.el ends here
